@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expanding Giveaway Cards</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Custom Animation */
+        .card {
+            transition: all 0.5s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card:not(.active) {
+            cursor: pointer;
+        }
+
+        .card-content {
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            /* Smooth transition */
+            transform: translateY(20px);
+            /* Initially push content down */
+            opacity: 0;
+        }
+
+        .active .card-content {
+            opacity: 1;
+            transform: translateY(0);
+            /* Move content up into view */
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        /*  Extra Style  */
+        .card-enter-button {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-gray-900 to-gray-800 min-h-screen flex items-center justify-center p-4">
+    <div class="container mx-auto">
+        <h1 class="text-3xl font-bold text-white text-center mb-8">Exciting Giveaways!</h1>
+        <div
+            class="flex space-x-4 max-w-5xl w-full mx-auto md:flex-row flex-wrap md:space-x-6 space-x-0 justify-center">
+
+            <!-- Card 1 -->
+            <div class="card flex-1 h-72 md:h-96 rounded-xl overflow-hidden shadow-2xl relative w-full md:w-auto"
+                style="background-image: url('https://images.unsplash.com/photo-1590523277760-06f4e9939d1a?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+                <div
+                    class="card-content w-full h-full bg-black/60 p-6 flex flex-col justify-end absolute bottom-0 left-0">
+                    <h2 class="text-2xl font-bold text-white mb-2">Luxury Getaway</h2>
+                    <p class="text-gray-200 mb-4">Indulge in a dream vacation. All expenses paid!</p>
+                    <button
+                        class="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-4 py-2 rounded-lg w-32 transition-all pulse-animation card-enter-button">
+                        Enter Now <i class="fa fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card flex-1 h-72 md:h-96 rounded-xl overflow-hidden shadow-2xl relative w-full md:w-auto"
+                style="background-image: url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+                <div
+                    class="card-content w-full h-full bg-black/60 p-6 flex flex-col justify-end absolute bottom-0 left-0">
+                    <h2 class="text-2xl font-bold text-white mb-2">Ultimate Tech Package</h2>
+                    <p class="text-gray-200 mb-4">Get the latest gadgets and accessories.</p>
+                    <button
+                        class="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-4 py-2 rounded-lg w-32 transition-all pulse-animation card-enter-button">
+                        Enter Now <i class="fa fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card flex-1 h-72 md:h-96 rounded-xl overflow-hidden shadow-2xl relative w-full md:w-auto"
+                style="background-image: url('https://images.unsplash.com/photo-1593672740624-38a34ff53d5d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+                <div
+                    class="card-content w-full h-full bg-black/60 p-6 flex flex-col justify-end absolute bottom-0 left-0">
+                    <h2 class="text-2xl font-bold text-white mb-2">Big Cash Giveaway</h2>
+                    <p class="text-gray-200 mb-4">Win a substantial cash prize instantly!</p>
+                    <button
+                        class="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-4 py-2 rounded-lg w-32 transition-all pulse-animation card-enter-button">
+                        Enter Now <i class="fa fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card flex-1 h-72 md:h-96 rounded-xl overflow-hidden shadow-2xl relative w-full md:w-auto"
+                style="background-image: url('https://images.unsplash.com/photo-1589128784765-a69d61ed9c39?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+                <div
+                    class="card-content w-full h-full bg-black/60 p-6 flex flex-col justify-end absolute bottom-0 left-0">
+                    <h2 class="text-2xl font-bold text-white mb-2">Diamond Necklace</h2>
+                    <p class="text-gray-200 mb-4">A stunning diamond necklace to add sparkle to your life.</p>
+                    <button
+                        class="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-4 py-2 rounded-lg w-32 transition-all pulse-animation card-enter-button">
+                        Enter Now <i class="fa fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card flex-1 h-72 md:h-96 rounded-xl overflow-hidden shadow-2xl relative w-full md:w-auto"
+                style="background-image: url('https://images.unsplash.com/photo-1578659258511-4a4e7dee7344?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+                <div
+                    class="card-content w-full h-full bg-black/60 p-6 flex flex-col justify-end absolute bottom-0 left-0">
+                    <h2 class="text-2xl font-bold text-white mb-2">Brand New Car</h2>
+                    <p class="text-gray-200 mb-4">Win a brand new car to cruise around in style.</p>
+                    <button
+                        class="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-4 py-2 rounded-lg w-32 transition-all pulse-animation card-enter-button">
+                        Enter Now <i class="fa fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                // Remove active class from all cards
+                cards.forEach(c => {
+                    c.classList.remove('active');
+                    c.style.flex = '1';
+                });
+
+                // Add active class to clicked card
+                card.classList.add('active');
+                card.style.flex = '3';
+            });
+        });
+
+        // Set initial state
+        document.querySelector('.card').classList.add('active');  //Ensure the first card is active by default
+        document.querySelector('.card.active').style.flex = '3';
+    </script>
+</body>
+
+</html>
